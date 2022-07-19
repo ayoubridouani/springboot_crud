@@ -7,35 +7,33 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
-@Table(name="students")
+@Table(name = "students")
 public class Student {
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", updatable = false, nullable = false)
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id", updatable = false, nullable = false)
 	private Long id;
-	
-    @Column(name="firstname", length=50, nullable=false, unique=false)
-    public String firstName;
-    
-    @Column(name="lastname", length=50, nullable=false, unique=false)
-    private String lastName;
-    
-    
-    @Column(name="email", length=50, nullable=false, unique=true)
-    private String email;
-    
-    @Column(name="password", length=256, nullable=false, unique=false)
-    private String password;
-    
-    @Column(name="note", nullable=false)
-    private Double note = 0.0;
-    
-    public Student() {
+
+	@Column(name = "firstname", length = 50, nullable = false, unique = false)
+	public String firstName;
+
+	@Column(name = "lastname", length = 50, nullable = false, unique = false)
+	private String lastName;
+
+	@Column(name = "email", length = 50, nullable = false, unique = true)
+	private String email;
+
+	@Column(name = "password", length = 256, nullable = false, unique = false)
+	private String password;
+
+	@Column(name = "note", nullable = false)
+	private Double note = 0.0;
+
+	public Student() {
 		super();
 	}
-	
+
 	public Student(Long id, String firstName, String lastName, String email, String password, Double note) {
 		super();
 		this.id = id;

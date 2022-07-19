@@ -10,18 +10,18 @@ import com.springboot.crud.repositories.StudentRepository;
 
 @Service
 public class StudentService {
-	
+
 	@Autowired
 	StudentRepository studentrepository;
-	
-	public List<Student> all(){
+
+	public List<Student> all() {
 		return studentrepository.findAll();
 	}
-	
+
 	public Student show(Long id) {
 		return studentrepository.findById(id).orElseGet(null);
 	}
-	
+
 	public Student create(Student student) {
 		return studentrepository.save(student);
 	}
@@ -29,7 +29,7 @@ public class StudentService {
 	public Student update(Student student) {
 		return studentrepository.save(student);
 	}
-	
+
 	public void delete(Long id) {
 		studentrepository.deleteById(id);
 	}

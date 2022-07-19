@@ -15,20 +15,20 @@ public class UserDetails implements org.springframework.security.core.userdetail
 
 	private static final long serialVersionUID = 1L;
 	private User user;
-	
+
 	public UserDetails(User user) {
 		this.user = user;
 	}
-	
+
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		Set<Role> roles = user.getRoles();
 		List<SimpleGrantedAuthority> authorities = new ArrayList<>();
-		
-		for(Role role : roles) {
+
+		for (Role role : roles) {
 			authorities.add(new SimpleGrantedAuthority(role.getName()));
 		}
-		
+
 		return authorities;
 	}
 
